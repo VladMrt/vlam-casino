@@ -6,7 +6,7 @@ app = Flask(__name__)
 def mainPage():
     return render_template('Main Page.html')
 
-@app.route('/g')
+@app.route('/geekWheel')
 def geekWheel():
     return render_template('geekWheel.html')
 
