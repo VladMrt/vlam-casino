@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Wait for 5 seconds and then stop the animation
         setTimeout(() => {
-            rouletteList.style.animationPlayState = "paused"; // Stop the wheel
+            rouletteList.style.animationPlayState = "paused"; 
         }, getRndInteger(1000,5000)); // 5000ms = 5 seconds
     });
 });
