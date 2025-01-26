@@ -9,16 +9,15 @@
     width: 1px !important;
   }
   
-  .compsoul-body {
+  .body {
     align-items: center;
-    background: #2f8f9d;
     display: flex;
     flex-flow: column wrap;
     font-size: 1.125vw;
     padding: 6vw;
   }
   
-  .compsoul-roulette-label {
+  .roulette-label {
     background: #181818;
     color: #ffffff;
     cursor: pointer;
@@ -29,15 +28,11 @@
     text-transform: uppercase;
   }
   
-  .compsoul-roulette-label:before {
-    content: "Try your luck";
+  .roulette-label:before {
+    content: "Spin the geek wheel";
   }
   
-  .compsoul-roulette-checkbox:checked + .compsoul-roulette-label:before {
-    content: "Stop!";
-  }
-  
-  .compsoul-roulette {
+  .roulette {
     --size: 34em;
     --number-of-items: 12;
   
@@ -58,8 +53,8 @@
     z-index: 1;
   }
   
-  .compsoul-roulette:before,
-  .compsoul-roulette:after {
+  .roulette:before,
+  .roulette:after {
     background: #00000022;
     border-radius: 100%;
     content: "";
@@ -72,14 +67,14 @@
     z-index: 2;
   }
   
-  .compsoul-roulette:after {
-    background: #ffffff url("https://compsoul.pl/uploads/images/logo.svg") no-repeat center;
+  .roulette:after {
+    background:#ffffff url("static/images/logo.png");
     background-size: 80%;
     transform: translate(-50%, -50%);
     z-index: 2;
   }
   
-  .compsoul-roulette .roulette-marker {
+  .roulette .roulette-marker {
     border-radius: 0.4em 0 0 0.4em;
     left: -2em;
     overflow: hidden;
@@ -89,10 +84,10 @@
     z-index: 0;
   }
   
-  .compsoul-roulette .roulette-marker:before,
-  .compsoul-roulette .roulette-marker:after {
+  .roulette .roulette-marker:before,
+  .roulette .roulette-marker:after {
     border-bottom: 2em solid transparent;
-    border-left: 4em solid #ffa3c7;
+    border-left: 4em solid #ffffff;
     border-top: 2em solid transparent;
     content: "";
     display: block;
@@ -100,14 +95,14 @@
     width: 0;
   }
   
-  .compsoul-roulette .roulette-marker:after {
+  .roulette .roulette-marker:after {
     border-left: 4em solid #00000022;
     position: absolute;
     top: 0.4em;
     z-index: -1;
   }
   
-  .compsoul-roulette .roulette-list {
+  .roulette .roulette-list {
     animation: roulette 0.8s linear infinite paused;
     border-radius: 100%;
     font-family: Helvetica, Arial, sans-serif;
@@ -121,7 +116,7 @@
     z-index: -1;
   }
   
-  .compsoul-roulette-checkbox:checked + .compsoul-roulette-label + .compsoul-roulette .roulette-list {
+  .roulette-checkbox:checked + .roulette-label + .roulette .roulette-list {
     animation-play-state: running;
   }
   
@@ -134,7 +129,7 @@
     }
   }
   
-  .compsoul-roulette .roulette-item {
+  .roulette .roulette-item {
     align-items: center;
     bottom: calc( var(--size) / 2 );
     color: #ffffff;
@@ -151,87 +146,87 @@
     writing-mode: vertical-rl;
   }
   
-  .compsoul-roulette .roulette-item:nth-child(1) {
+  .roulette .roulette-item:nth-child(1) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 0 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(2) {
+  .roulette .roulette-item:nth-child(2) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 1 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(3) {
+  .roulette .roulette-item:nth-child(3) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 2 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(4) {
+  .roulette .roulette-item:nth-child(4) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 3 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(5) {
+  .roulette .roulette-item:nth-child(5) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 4 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(6) {
+  .roulette .roulette-item:nth-child(6) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 5 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(7) {
+  .roulette .roulette-item:nth-child(7) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 6 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(8) {
+  .roulette .roulette-item:nth-child(8) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 7 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(9) {
+  .roulette .roulette-item:nth-child(9) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 8 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(10) {
+  .roulette .roulette-item:nth-child(10) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 9 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(11) {
+  .roulette .roulette-item:nth-child(11) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 10 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(12) {
+  .roulette .roulette-item:nth-child(12) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 11 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(13) {
+  .roulette .roulette-item:nth-child(13) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 12 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(14) {
+  .roulette .roulette-item:nth-child(14) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 13 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(15) {
+  .roulette .roulette-item:nth-child(15) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 14 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(16) {
+  .roulette .roulette-item:nth-child(16) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 15 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(17) {
+  .roulette .roulette-item:nth-child(17) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 16 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(18) {
+  .roulette .roulette-item:nth-child(18) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 17 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(19) {
+  .roulette .roulette-item:nth-child(19) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 18 ) );
   }
   
-  .compsoul-roulette .roulette-item:nth-child(20) {
+  .roulette .roulette-item:nth-child(20) {
     transform: rotate( calc( 360deg / var(--number-of-items) * 19 ) );
   }
   
-  .compsoul-roulette .roulette-item:after {
+  .roulette .roulette-item:after {
     bottom: 0;
     border-right: calc( var(--size) / 2 * var(--tangent) + 1px ) solid transparent;
     border-top: calc( var(--size) / 2 ) solid transparent;
@@ -246,19 +241,19 @@
     z-index: -1;
   }
   
-  .compsoul-roulette .roulette-item:nth-child(4n+1):after {
-    border-top-color: #143f6b;
+  .roulette .roulette-item:nth-child(4n+1):after {
+    border-top-color: #ff0000;
   }
   
-  .compsoul-roulette .roulette-item:nth-child(4n+2):after {
-    border-top-color: #F1E0AC;
+  .roulette .roulette-item:nth-child(4n+2):after {
+    border-top-color: #000000;
   }
   
-  .compsoul-roulette .roulette-item:nth-child(4n+3):after {
-    border-top-color: #F55353;
+  .roulette .roulette-item:nth-child(4n+3):after {
+    border-top-color: #ff0000;
   }
   
-  .compsoul-roulette .roulette-item:nth-child(4n+4):after {
-    border-top-color: #feb139;
+  .roulette .roulette-item:nth-child(4n+4):after {
+    border-top-color: #000000;
   }
   
