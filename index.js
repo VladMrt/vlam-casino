@@ -17,6 +17,10 @@ app.get('/DiliMiniSlots', (req, res) => {
     res.sendFile(path.join(__dirname, 'templates', 'DiliMiniSlots.html'));
 });
 
+app.get('/JoculCalamarului', (req, res) => {
+  res.sendFile(path.join(__dirname, 'templates', 'JoculCalamarului.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`)
 })

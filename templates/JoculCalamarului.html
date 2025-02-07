@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border: 1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+body {
+    background-image: url('static/images/JoculCalamaruluiFundal.webp');
+}
+canvas{
+    margin-top: 30vh;
+    margin-left: 34vw;
+    border-width: 4px;
+    border-color: white;
+}
+div{
+    margin-left: 46vw;
+    user-select: none;
+}
+</style>
+</head>
+<body onload="startGame()">
+<div>
+<script>
+var myGamePiece;
+var myObstacles = [];
+var myScore;
+var myImage;
+
+function startGame() {
+    myImage = new Image();
+    myImage.src = "static/images/JoculCalamaruluiGamePiece.jpg.jpg";
+    myGamePiece = new component(30, 30, myImage, 10, 120, "image");
+    myGamePiece.gravity = 0.05;
+    myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas: document.createElement("canvas"),
+    start: function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    clear: function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+};
+refres
+function component(width, height, colorOrImage, x, y, type) {
+    this.type = type;
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;
+    this.x = x;
+    this.y = y;
+    this.gravity = 0;
+    this.gravitySpeed = 0;
+
+    if (type === "image") {
+        this.image = colorOrImage;
+    } else {
+        this.color = colorOrImage;
+    }
+
+    this.update = function() {
+        var ctx = myGameArea.context;
+        if (this.type === "text") {
+            ctx.font = this.width + " " + this.height;
+            ctx.fillStyle = this.color;
+            ctx.fillText(this.text, this.x, this.y);
+        } else if (this.type === "image") {
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+        } else {
+            ctx.fillStyle = this.color;
+            ctx.fillRect(this.x, this.y, this.width, this.height);
+        }
+    };
+
+    this.newPos = function() {
+        this.gravitySpeed += this.gravity;
+        this.x += this.speedX;
+        this.y += this.speedY + this.gravitySpeed;
+
+        // Împiedică ieșirea din canvas
+        if (this.y < 0) {
+            this.y = 0;
+            this.gravitySpeed = 0;
+        }
+        var rockbottom = myGameArea.canvas.height - this.height;
+        if (this.y > rockbottom) {
+            this.y = rockbottom;
+            this.gravitySpeed = 0;
+        }
+        if (this.x < 0) {
+            this.x = 0;
+        }
+        var rightEdge = myGameArea.canvas.width - this.width;
+        if (this.x > rightEdge) {
+            this.x = rightEdge;
+        }
+    };
+
+    this.crashWith = function(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + this.width;
+        var mytop = this.y;
+        var mybottom = this.y + this.height;
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + otherobj.width;
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + otherobj.height;
+        return !(mybottom < othertop || mytop > otherbottom || myright < otherleft || myleft > otherright);
+    };
+}
+
+function updateGameArea() {
+    for (var i = 0; i < myObstacles.length; i++) {
+        if (myGamePiece.crashWith(myObstacles[i])) {
+            return;
+        }
+    }
+    myGameArea.clear();
+    myGameArea.frameNo += 1;
+    if (myGameArea.frameNo == 1 || everyinterval(150)) {
+        var x = myGameArea.canvas.width;
+        var minHeight = 20;
+        var maxHeight = 200;
+        var height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
+        var minGap = 50;
+        var maxGap = 200;
+        var gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
+        myObstacles.push(new component(10, height, "green", x, 0));
+        myObstacles.push(new component(10, x - height - gap, "green", x, height + gap));
+    }
+    for (var i = 0; i < myObstacles.length; i++) {
+        myObstacles[i].x += -1;
+        myObstacles[i].update();
+    }
+    myScore.text = "SCORE: " + myGameArea.frameNo;
+    myScore.update();
+    myGamePiece.newPos();
+    myGamePiece.update();
+}
+
+function everyinterval(n) {
+    return (myGameArea.frameNo / n) % 1 === 0;
+}
+
+function accelerate(n) {
+    myGamePiece.gravity = n;
+}
+</script>
+<br>
+<button onmousedown="accelerate(-0.2); alerta()" onmouseup="accelerate(0.05)">ACCELEREAZA</button>
+<h onmousedown="location.reload()">RESTART</h>
+<style>
+h{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-width: 4px;
+    margin-left: 6px;
+}
+h:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+</style>
+<script>
+    function SunetVaiSteauaLui(){
+        var path = "static/audio/Jocul Calamarului Theme.mp3"
+        var snd = new Audio(path + melody + ".mp3");
+        snd.play();
+    }
+</script>
+</div>
+<script>
+var snd;
+
+function alerta() {
+    var n = Math.floor(Math.random() * 10);
+    var button = document.querySelector("button");
+
+    if (n < 3) {
+        alert("muie");
+        accelerate(0.05);
+        
+        // Oprește melodia anterioară dacă există
+        if (snd) {
+            snd.pause();
+            snd.currentTime = 0;
+        }
+        
+        // Pornește melodia
+        snd = new Audio("static/audio/Jocul Calamarului Theme.mp3");
+        snd.play();
+        
+        // Dezactivează butonul
+        button.disabled = true;
+        
+        // Re-activează butonul după 2 secunde
+        setTimeout(function() {
+            button.disabled = false;
+        }, 600);
+    }
+}
+</script>
+</body>
+</html>
