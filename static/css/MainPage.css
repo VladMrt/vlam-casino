@@ -1,0 +1,154 @@
+a:link{
+    color:rgba(255, 255, 255, 0);
+  }
+  a:visited{
+    color:rgba(0, 0, 0, 0);
+  }
+  a:hover{
+    color:rgba(0, 0, 0, 0);
+  }
+  a:focus{
+    color:rgba(255, 255, 255, 0);
+  }
+  a:active{
+    color:rgba(255, 255, 255, 0);
+  }
+nova-sc-regular {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .bona-nova-sc-bold {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .bona-nova-sc-regular-italic {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+body{
+    background-color: rgb(14, 29, 53);
+}
+.text{
+    color:white;
+    font-family: "Bona Nova SC", serif;
+}
+.textsus{
+    font-size:2.5vw;
+    animation-duration: 1s;
+}
+.textsus:hover{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.847);
+}
+h1{
+    background-color: #410c6c;
+    position: fixed;
+    width:100vw;
+    margin-top: -15px;
+    margin-left: -7px;;
+}
+.header{
+    display: flex;
+    flex:1;
+    align-items: center;
+
+}
+.logo{
+    width:20%;
+    height:20%;
+    animation-duration: 1s;
+}
+.logo:hover{
+    opacity:0.9;
+    cursor: pointer;
+}
+.mid{
+    display:flex;
+    flex:2;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.right{
+    display: flex;
+    flex:1;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.autentificare{
+    font-family: "Bona Nova SC", serif;
+    height:4vh;
+    width:10vw;
+    border-radius: 10px;
+    background-color: rgb(215, 71, 247);
+    border: 0px;
+    font-size: 1.3vw;
+    animation-duration: 0.6s;
+}
+
+.autentificare:hover{
+    cursor: pointer;
+    opacity:0.9;
+}
+.inregistrare{
+    font-family: "Bona Nova SC", serif;
+    font-size: 1.3vw;
+    height:4vh;
+    width:10vw;
+    border-radius: 10px;
+    background-color: white;
+    border: 0px;
+    animation-duration: 0.6s;
+    
+}
+.inregistrare:hover{
+    cursor: pointer;
+    opacity:0.9;
+}
+.jocuri{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.joc{
+
+    display:flex;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:32vw;
+    height:40vh;
+    border-radius: 200px;
+}
+.imaginejoc{
+    width:32vw;
+    height:33vh;
+    border-radius: 50px;
+}
+
+
+.coloanajocuri{
+    margin-top: 100px;
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.imaginejoc:hover{
+    cursor: pointer;
+    opacity:0.8;
+}
