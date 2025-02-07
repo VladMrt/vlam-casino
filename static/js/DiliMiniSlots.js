@@ -1,5 +1,5 @@
 const ICONS = [
-  'miner', 'mighty_miner', 'lucky_seven', 'mining', 'strip_mining', 'dwarf', 'slot_machine',
+  'miner', 'mighty_miner', 'slot_machine', 'mining', 'strip_mining', 'dwarf', 'lucky_seven',
 ];
 
 /**
@@ -64,7 +64,8 @@ function spin(elem) {
 
   // set the result delayed
   // this would be the right place to request the combination from the server
-  window.setTimeout(setResult, BASE_SPINNING_DURATION * 1000 / 2);
+  let win = getRandomInt(100);
+  window.setTimeout(setResult(win), BASE_SPINNING_DURATION * 1000 / 2);
 
   window.setTimeout(function () {
       // after the spinning is done, remove the class and enable the button again
@@ -76,27 +77,68 @@ function spin(elem) {
 /**
 * Sets the result items at the beginning and the end of the columns
 */
-function setResult() {
+function setResult(win) {
   for (let col of cols) {
-
-      // generate 3 random items
-      let results = [
+    let icons = col.querySelectorAll('.icon img');
+    let div5 = ((win % 5) == 0)? true : false;
+    let div3 = ((win % 3) == 0)? true : false;
+    let div2 = ((win % 2) == 0)? true : false;
+    let winnerSymbol = 0;
+    if(win == 7){
+        winnerSymbol = ICONS[6];
+    } 
+    else if(div5 && div3 && !div2 && win > 60){
+      winnerSymbol = ICONS[5];
+    }
+    else if(div5 && !div3 && div2 && win > 50){
+      winnerSymbol = ICONS[4];
+    }
+    else if(!div5 && div3 && div2 && win < 40){
+      winnerSymbol = ICONS[3];
+    }
+    else if(!div5 && !div3 && !div2 && win < 30){
+      winnerSymbol = ICONS[2];
+    }
+    else if(!div5 && !div3 && !div2 && win > 70){
+      winnerSymbol = ICONS[1];
+    }
+    else if(!div5 && !div3 && div2 && win < 20){
+      winnerSymbol = ICONS[0];
+    }
+    if(winnerSymbol != 0){
+      let symbol1 = getRandomIcon()
+      while(symbol1 == winnerSymbol)
+        symbol1 = getRandomIcon();
+      let symbol2 = getRandomIcon()
+      while(symbol2 == winnerSymbol)
+        symbol2 = getRandomIcon();
+      results = [
+        symbol1,
+        winnerSymbol,
+        symbol2
+      ];
+    }else{ 
+        // generate 3 random items
+        results = [ 
           getRandomIcon(),
           getRandomIcon(),
           getRandomIcon()
-      ];
-
-      let icons = col.querySelectorAll('.icon img');
+        ]; 
+      }
       // replace the first and last three items of each column with the generated items
       for (let x = 0; x < 3; x++) {
           icons[x].setAttribute('src', 'static/images/' + results[x] + '.png');
           icons[(icons.length - 3) + x].setAttribute('src', 'static/images/' + results[x] + '.png');
       }
-  }
+    }
 }
 
 function getRandomIcon() {
   return ICONS[Math.floor(Math.random() * ICONS.length)];
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
 }
 
 /**
