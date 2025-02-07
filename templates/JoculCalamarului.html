@@ -162,9 +162,7 @@ function accelerate(n) {
 <br>
 <button 
     onmousedown="accelerate(-0.2); alerta()" 
-    onmouseup="accelerate(0.05)" 
-    ontouchstart="accelerate(-0.2); alerta()" 
-    ontouchend="accelerate(0.05)">
+    onmouseup="accelerate(0.05)" >
     ACCELEREAZA
 </button>
 <h onmousedown="location.reload()">RESTART</h>
@@ -217,6 +215,38 @@ function alerta() {
         }, 600);
     }
 }
+function startAcceleration() {
+        console.log("Touch started: accelerating");
+        accelerate(-0.2);
+    }
+
+    function stopAcceleration() {
+        console.log("Touch ended: stopping acceleration");
+        accelerate(0.05);
+    }
+
+    /* Mobile: Tap anywhere on screen to accelerate */
+    document.addEventListener("touchstart", startAcceleration, { passive: false });
+    document.addEventListener("touchend", stopAcceleration, { passive: false });
 </script>
+<style>
+    @media (max-width: 768px){
+       canvas{
+        margin-left:-5px;
+        margin-bottom: 100px;
+        border-width: 4px;
+        border-color: rgb(255, 255, 255);
+        width:98vw;
+        height:300px;
+    } 
+    button{
+        display: none;
+    }
+    h{
+        margin-bottom: 10vh;
+    }
+}
+</style>
+
 </body>
 </html>
