@@ -160,7 +160,13 @@ function accelerate(n) {
 }
 </script>
 <br>
-<button onmousedown="accelerate(-0.2); alerta()" onmouseup="accelerate(0.05)">ACCELEREAZA</button>
+<button 
+    onmousedown="accelerate(-0.2); alerta()" 
+    onmouseup="accelerate(0.05)" 
+    ontouchstart="accelerate(-0.2); alerta()" 
+    ontouchend="accelerate(0.05)">
+    ACCELEREAZA
+</button>
 <h onmousedown="location.reload()">RESTART</h>
 <style>
 h{
