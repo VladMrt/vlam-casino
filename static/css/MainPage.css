@@ -1,8 +1,5 @@
-a:link:focus:active{
-    color:rgba(255, 255, 255, 0);
-  }
-  a:visited:hover{
-    color:rgba(0, 0, 0, 0);
+a:link:focus:active:visited:hover{
+    text-decoration: none;
   }
 nova-sc-regular {
     font-family: "Bona Nova SC", serif;
@@ -14,7 +11,17 @@ nova-sc-regular {
     font-weight: 700;
   }
 body{
+    overflow-x: hidden;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     background-color: rgb(14, 29, 53);
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 .text{
     color:white;
@@ -134,6 +141,94 @@ h1{
 .imaginejoc:hover{
     cursor: pointer;
     opacity:0.8;
+}
+footer{
+    text-align: left;
+    align-items: center;
+    background-color: #410c6c;
+    height:900px;
+    width:100%;
+    position:relative;
+    margin-top: 200px;
+    padding-bottom: 0px;
+}
+/* Styling footer */
+.DivMareFooter{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    justify-items: space-between;
+}
+.DivParteaDeschisa{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+}
+.DivSectiuneaDespre{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding-left: 1vw;
+}
+.DivSectiuneMetodePlata{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.DivSectiuneAjutor{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.DivParteaInchisa{
+    display: flex;
+    flex-direction: column;
+    flex:0.3;
+    background-color: #340b55;
+    padding-left: 3vw;
+}
+.DivFooterJos{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    padding-top: 5vh;
+    background-color: #230939;
+    height:200px;
+    width: 100%;
+    justify-content: space-between;
+}
+/*Text styling footer*/
+.TextDespre, .TextAjutor, .TextMetodePlata, .TextDespre1, .TextAjutor1, .TextMetodePlata1, .TextDespre2, .Text18Ani, .TextFooterJos1, .TextFooterJos{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    size:2vw;
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+}
+.TextDespre1, .TextAjutor1, .TextMetodePlata1{
+    margin-bottom: 2.7vh;
+}
+.TextDespre{
+
+}
+.TextDespre2{
+    margin-bottom: 4vh;
+}
+.TextAjutor{
+
+}
+.TextMetodePlata{
+
+}
+.Text18Ani{
+    width:18vw;
+}
+.TextFooterJos1{
+    width:54vw;
+    padding-left: 1.3vw;
+}
+.TextFooterJos{
+    width: 24vw;
 }
 /* Optimizare pt telefon */
 @media (min-width: 1100px){
