@@ -208,17 +208,8 @@ footer{
 .TextDespre1, .TextAjutor1, .TextMetodePlata1{
     margin-bottom: 2.7vh;
 }
-.TextDespre{
-
-}
 .TextDespre2{
     margin-bottom: 4vh;
-}
-.TextAjutor{
-
-}
-.TextMetodePlata{
-
 }
 .Text18Ani{
     width:18vw;
@@ -231,12 +222,41 @@ footer{
     width: 24vw;
 }
 /* Optimizare pt telefon */
-@media (min-width: 1100px){
+@media (min-width: 800px){
     .logo1{
         display: none;
     }
 }
 @media (max-width: 768px) {
+.DivFooterJos, .DivMareFooter, .DivParteaDeschisa{
+flex-direction: column;
+}
+footer{
+    height:2000px;
+}
+ .TextAjutor1, .TextMetodePlata1{
+    margin-top:40px;
+    margin-bottom: 20px;
+}
+.DivParteaInchisa{
+    height:1000px;
+    width:100%;
+}
+.Text18Ani{
+    width:400px;
+}
+.TextDespre1{
+    margin-bottom: 20px;
+}
+.TextFooterJos1{
+    margin-bottom: 20px;
+}
+.DivFooterJos{
+    height:700px;
+}
+.TextFooterJos, .TextFooterJos1, .TextMetodePlata1{
+    width: 400px;
+}
     .header {
         flex-direction: row;
         text-align: center;
