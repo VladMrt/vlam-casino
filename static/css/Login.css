@@ -104,11 +104,220 @@ h1{
     opacity:0.9;
 }
 .DivLoginForm{
-    background-color: white;
     height:400px;
-    width:400px;
-    position:absolute;
-    margin-left: 33vw;
+    width: 100%;
+    align-items: center;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
+}
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height:500px;
+    width:500px;
+    align-items: left;
+    border-radius: 25px;
+    padding-top: 20px;
+}
+.FrameNumeForm, .FramePassForm{
+    background-color: white;
+    height: 40px;
+    width:420px;
+    border-radius: 7px;
+    border-color: rgb(0, 0, 0);
+    border-width: 3px;
+    z-index: 10;
+    border:solid;
+    font-family: "Oswald", serif;
+    margin-left: 40px;
+    margin-bottom: 40px;
+
+}
+.LabelLogin{
+    font-size: 30px;
+}
+.TextPasForm, .TextNumeForm, .LabelLogin{
+    color: rgb(0, 0, 0);
+    font-family: "Oswald", serif;
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+.submit{
+    width:426px;
+    margin-left:40px;
+    height: 50px;
+    font-family: "Oswald", serif;
+    background-color: #7e15d3;
+    color:white;
+    border-radius: 7px;
+    border:none;
+}
+
+/* Styling footer */
+footer{
+    text-align: left;
+    align-items: center;
+    background-color: #410c6c;
+    height:900px;
+    width:100%;
+    position:relative;
+    margin-top: 200px;
+    padding-bottom: 0px;
+}
+
+.DivMareFooter{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    justify-items: space-between;
+}
+.DivParteaDeschisa{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+}
+.DivSectiuneaDespre{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding-left: 1vw;
+}
+.DivSectiuneMetodePlata{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.DivSectiuneAjutor{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.DivParteaInchisa{
+    display: flex;
+    flex-direction: column;
+    flex:0.3;
+    background-color: #340b55;
+    padding-left: 3vw;
+}
+.DivFooterJos{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    padding-top: 5vh;
+    background-color: #230939;
+    height:200px;
+    width: 100%;
+    justify-content: space-between;
+}
+/*Text styling footer*/
+.TextDespre, .TextAjutor, .TextMetodePlata, .TextDespre1, .TextAjutor1, .TextMetodePlata1, .TextDespre2, .Text18Ani, .TextFooterJos1, .TextFooterJos{
+    color:white;
+    font-family: 'Courier New', Courier, monospace;
+    size:2vw;
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+}
+.TextDespre1, .TextAjutor1, .TextMetodePlata1{
+    margin-bottom: 2.7vh;
+}
+.TextDespre2{
+    margin-bottom: 4vh;
+}
+.Text18Ani{
+    width:18vw;
+}
+.TextFooterJos1{
+    width:54vw;
+    padding-left: 1.3vw;
+}
+.TextFooterJos{
+    width: 24vw;
+}
+/* Optimizare pt telefon */
+@media (min-width: 800px){
+    .logo1{
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+.DivFooterJos, .DivMareFooter, .DivParteaDeschisa{
+flex-direction: column;
+}
+footer{
+    height:2000px;
+}
+ .TextAjutor1, .TextMetodePlata1{
+    margin-top:40px;
+    margin-bottom: 20px;
+}
+.DivParteaInchisa{
+    height:1000px;
+    width:100%;
+}
+.Text18Ani{
+    width:400px;
+}
+.TextDespre1{
+    margin-bottom: 20px;
+}
+.TextFooterJos1{
+    margin-bottom: 20px;
+}
+.DivFooterJos{
+    height:700px;
+}
+.TextFooterJos, .TextFooterJos1, .TextMetodePlata1{
+    width: 400px;
+}
+    .header {
+        flex-direction: row;
+        text-align: center;
+        height:100px;
+    }
+.right {
+        flex-direction: row;
+    }
+    .autentificare, .inregistrare {
+        display: none;
+    }
+    .jocuri {
+        flex-direction: column;
+    }
+    .joc {
+        width: 90%;
+        height: auto;
+        border-radius: 30px;
+    }
+    .imaginejoc {
+        width: 100%;
+    }
+    .textsus {
+        font-size: 5vw;
+    }
+    .coloanajocuri{
+        margin-top: 0px;
+        display: flex;
+        flex:1;
+        flex-direction: column;
+        justify-content: center;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .mid{
+        display: none;
+    }
+    .logo1{
+        width:60%;
+        height:50%;
+        animation-duration: 1s;
+    }
+    .logo1:hover{
+        opacity:0.9;
+        cursor: pointer;
+    }
+    .logo{
+        display: none;
+    }
 }

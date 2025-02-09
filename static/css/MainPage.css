@@ -203,7 +203,6 @@ footer{
 /*Text styling footer*/
 .TextDespre, .TextAjutor, .TextMetodePlata, .TextDespre1, .TextAjutor1, .TextMetodePlata1, .TextDespre2, .Text18Ani, .TextFooterJos1, .TextFooterJos{
     color:white;
-    font-family: 'Courier New', Courier, monospace;
     size:2vw;
     font-family: "Oswald", serif;
     font-optical-sizing: auto;
