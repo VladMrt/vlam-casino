@@ -17,6 +17,10 @@ app.get('/DiliMiniSlots', (req, res) => {
     res.sendFile(path.join(__dirname, 'templates', 'DiliMiniSlots.html'));
 });
 
+app.get('/Login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'templates', 'Login.html'));
+});
+
 app.get('/JoculCalamarului', (req, res) => {
   res.sendFile(path.join(__dirname, 'templates', 'JoculCalamarului.html'));
 });
