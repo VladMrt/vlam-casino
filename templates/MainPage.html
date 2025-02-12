@@ -26,7 +26,7 @@ git push -u origin main
 
         <h1>
             <div class="header">
-                <img src="static/images/VlamCasinoLogo.png" class="logo">
+                <img onclick="MainPage()" src="static/images/VlamCasinoLogo.png" class="logo">
                 <div class="mid"> 
                     <a><div class="text textsus">Casino</div></a>
                     <div class="text textsus">Live Casino</div>
@@ -35,13 +35,12 @@ git push -u origin main
                 </div>
                 <div class="right">
                     <button class="autentificare"><h class="autentificaretxt">Autentificare</h></button>
-                    <img src="static/images/VlamCasinoLogo.png" class="logo1">
+                    <img onclick="MainPage()" src="static/images/VlamCasinoLogo.png" class="logo1">
                     <button class="inregistrare">Inregistrare</button>
                 </div>
             </div>
         </h1>
         <div class="jocuri">
-            <div class="coloanajocuri1">
                 <div class="joc">
                     <a href="https://vladmrt.github.io/DiliMiniSlots"><img src="static/images/Dili Mini Slots Thumb.jpg" class="imaginejoc"></a>
                     <p class="text">Dili Mini Slots</p>
@@ -54,8 +53,6 @@ git push -u origin main
                     <img src="static/images/Varu Lu' Dili Mini Slots Thumb.jpg" class="imaginejoc">
                     <p class="text">Varu Lu' Dili Mini Slots</p>
                 </div>
-            </div>
-            <div class="coloanajocuri">
                 <div class="joc">
                     <img src="static/images/Futuristic Slots Thumb.webp" class="imaginejoc">
                     <p class="text">Futuristic Slots</p>
@@ -68,8 +65,6 @@ git push -u origin main
                     <img src="static/images/777 BIG WIN SLOTS Thumb.jpg" class="imaginejoc">
                     <p class="text">777 BIG WIN SLOTS</p>
                 </div>
-            </div>
-            <div class="coloanajocuri">
                 <div class="joc">
                     <img src="static/images/Lebron Capra Slots Thumb.avif" class="imaginejoc">
                     <p class="text">🐐 Lebron Capra Slots 🐐</p>
@@ -83,7 +78,6 @@ git push -u origin main
                     <p class="text">Trenu' Diliu Slots</p>
                 </div>
             </div>
-        </div>
     <footer>
         <div class="DivMareFooter">
             <div class="DivParteaDeschisa">
@@ -140,5 +134,10 @@ git push -u origin main
             </p>
         </div>
     </footer>
+    <script>
+        function MainPage(){
+            location.href = 'https://vladmrt.github.io/';
+        }
+    </script>
     </body>
 </html>

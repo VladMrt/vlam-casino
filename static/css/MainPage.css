@@ -37,7 +37,6 @@ body, html {
 }
 h1{
     background-color: #410c6c;
-    position: fixed;
     width:100%;
     margin-top: -15px;
     margin-left: -7px;;
@@ -106,40 +105,32 @@ h1{
     cursor: pointer;
     opacity:0.9;
 }
-.jocuri{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-content: space-evenly;
+.jocuri {
+    margin-top: 3vh;
+    text-align: center;
     align-items: center;
+    display:grid;
+    column-gap: 5px;
+    row-gap:5px;
+    justify-items: center;
 }
 .joc{
-
     display:flex;
-    flex:1;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width:32vw;
-    height:40vh;
+    width:450px;
+    height:350px;
     border-radius: 200px;
     z-index: 2;
+    align-items: center;
+    min-width: 350px;
+    min-height: 250px;
 }
 .imaginejoc{
-    width:32vw;
-    height:33vh;
+    width:450px;
+    height:300px;
     border-radius: 50px;
-}
-
-
-.coloanajocuri, .coloanajocuri1{
-    margin-top: 100px;
-    display: flex;
-    flex:1;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-evenly;
-    align-items: center;
+    min-width: 400px;
+    min-height: 300px;
 }
 .imaginejoc:hover{
     cursor: pointer;
@@ -223,6 +214,7 @@ footer{
 .TextFooterJos{
     width: 24vw;
 }
+
 /* Optimizare pt telefon */
 @media (min-width: 800px){
     .logo1{
@@ -271,7 +263,7 @@ footer{
         display: none;
     }
     .jocuri {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     .joc {
         width: 90%;
@@ -283,15 +275,6 @@ footer{
     }
     .textsus {
         font-size: 5vw;
-    }
-    .coloanajocuri{
-        margin-top: 0px;
-        display: flex;
-        flex:1;
-        flex-direction: column;
-        justify-content: center;
-        justify-content: space-evenly;
-        align-items: center;
     }
     .mid{
         display: none;
@@ -307,5 +290,45 @@ footer{
     }
     .logo{
         display: none;
+    }
+}
+@media screen and (max-width: 900px){
+    .jocuri{
+        grid-template-columns:  1fr;
+    }
+}
+@media screen and (min-width: 1000px){
+    .jocuri{
+        grid-template-columns:  1fr 1fr;
+    }
+}
+@media screen and (min-width: 1300px){
+    .jocuri{
+        grid-template-columns:  1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1800px){
+    .jocuri{
+        grid-template-columns:  1fr 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 2250px){
+    .jocuri{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 2950px){
+    .jocuri{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 3500px){
+    .jocuri{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 4600px){
+    .jocuri{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 }
