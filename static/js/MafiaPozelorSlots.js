@@ -9,6 +9,9 @@ var DIRECTION = {
 
 var rounds = [5, 5, 3, 3, 2];
 var colors = ['#410c6c'];
+var round = 0;
+var roundsWonPlayer = 0;
+var roundsWonPaddle = 0;
 
 // The ball object (The cube that bounces back and forth)
 var Ball = {
@@ -35,7 +38,7 @@ var Paddle = {
 			y: (this.canvas.height / 2) - 35,
 			score: 0,
 			move: DIRECTION.IDLE,
-			speed: 15
+			speed: 15,
 		};
 	}
 };
@@ -84,7 +87,7 @@ var Game = {
 		// Change the canvas color;
 		Pong.context.fillStyle = '#ffffff';
 
-		// Draw the end game menu text ('Game Over' and 'Winner')
+		// Draw the end game menu text
 		Pong.context.fillText(text,
 			Pong.canvas.width / 2,
 			Pong.canvas.height / 2 + 15
@@ -93,7 +96,16 @@ var Game = {
 		setTimeout(function () {
 			Pong = Object.assign({}, Game);
 			Pong.initialize();
+			Pong.round = round;
 		}, 3000);
+		if(roundsWonPaddle === 3 || roundsWonPlayer === 3)
+			this.reset();
+	},
+
+	reset: function(){
+		round = 0;
+		roundsWonPaddle = 0;
+		roundsWonPlayer = 0;
 	},
 
 	menu: function () {
@@ -192,12 +204,12 @@ var Game = {
 		if (this.player.score === rounds[this.round]) {
 			// Check to see if there are any more rounds/levels left and display the victory screen if
 			// there are not.
+			roundsWonPlayer++;
 			if (!rounds[this.round + 1]) {
 				this.over = true;
-				setTimeout(function () { Pong.endGameMenu('Winner!'); }, 1000);
+				setTimeout(function () { Pong.endGameMenu('Next Round'); }, 1000);
 			} else {
 				// If there is another round, reset all the values and increment the round number.
-				this.color = this._generateRoundColor();
 				this.player.score = this.paddle.score = 0;
 				this.player.speed += 0.5;
 				this.paddle.speed += 1;
@@ -207,9 +219,22 @@ var Game = {
 		}
 		// Check to see if the paddle/AI has won the round.
 		else if (this.paddle.score === rounds[this.round]) {
+			roundsWonPaddle++;
+			this.over = true;
+			setTimeout(function () { Pong.endGameMenu('Next Round'); }, 1000);
+		}
+		if(roundsWonPlayer === 3){
+			this.over = true;
+			setTimeout(function () { Pong.endGameMenu('Winner!'); }, 1000);
+		}
+		else if(roundsWonPaddle === 3){
 			this.over = true;
 			setTimeout(function () { Pong.endGameMenu('Game Over!'); }, 1000);
 		}
+		
+			
+		if(this.player.score === rounds[this.round] || this.paddle.score === rounds[this.round])
+			round++;
 	},
 
 	// Draw the objects to the canvas element
@@ -291,14 +316,33 @@ var Game = {
 			200
 		);
 
+		this.context.fillText(
+			roundsWonPlayer.toString(),
+			(this.canvas.width / 2) - 300,
+			this.canvas.height - 50
+		);
+
+		this.context.fillText(
+			"- Overall score -",
+			(this.canvas.width / 2),
+			this.canvas.height - 50,
+			500
+		);
+
+		this.context.fillText(
+			roundsWonPaddle.toString(),
+			(this.canvas.width / 2) + 300,
+			this.canvas.height - 50
+		);
+
 		// Change the font size for the center score text
 		this.context.font = '30px Courier New';
 
 		// Draw the winning score (center)
 		this.context.fillText(
-			'Round ' + (Pong.round + 1),
+			'Round ' + (round + 1),
 			(this.canvas.width / 2),
-			35
+			this.canvas.height - 820
 		);
 
 		// Change the font size for the center score value
@@ -306,13 +350,15 @@ var Game = {
 
 		// Draw the current round number
 		this.context.fillText(
-			rounds[Pong.round] ? rounds[Pong.round] : rounds[Pong.round - 1],
+			"First to " + (rounds[Pong.round] ? rounds[Pong.round] : rounds[Pong.round - 1]),
 			(this.canvas.width / 2),
-			100
+			this.canvas.height - 770
 		);
 	},
 
 	loop: function () {
+		let mySound = new Audio('static/audio/MafiaPozelor.wav')
+		mySound.play()
 		Pong.update();
 		Pong.draw();
 
@@ -356,12 +402,6 @@ var Game = {
 		return ((new Date()).getTime() - this.timer >= 1000);
 	},
 
-	// Select a random color as the background of each level/round.
-	_generateRoundColor: function () {
-		var newColor = colors[Math.floor(Math.random() * colors.length)];
-		if (newColor === this.color) return Pong._generateRoundColor();
-		return newColor;
-	}
 };
 
 var Pong = Object.assign({}, Game);
