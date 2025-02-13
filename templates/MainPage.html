@@ -9,7 +9,7 @@ git commit -m "Initial commit"
 git push -u origin main
 -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="script" href="static/js/MainPage.js">
+        <script src="static/js/PageLink.js"></script>
         <link rel="shortcut icon" href="static/images/LogoFav.png"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +24,9 @@ git push -u origin main
     </head>
 
     <body>
-
         <h1>
             <div class="header">
-                <img onclick="MainPage()" src="static/images/VlamCasinoLogo.png" class="logo">
+                <img onclick="Page('')" src="static/images/VlamCasinoLogo.png" class="logo">
                 <div class="mid"> 
                     <a><div class="text textsus">Casino</div></a>
                     <div class="text textsus">Live Casino</div>
@@ -36,18 +35,18 @@ git push -u origin main
                 </div>
                 <div class="right">
                     <button class="autentificare"><h class="autentificaretxt">Autentificare</h></button>
-                    <img onclick="MainPage()" src="static/images/VlamCasinoLogo.png" class="logo1">
+                    <img onclick="Page('')" src="static/images/VlamCasinoLogo.png" class="logo1">
                     <button class="inregistrare">Inregistrare</button>
                 </div>
             </div>
         </h1>
         <div class="jocuri">
                 <div class="joc">
-                    <a href="https://vladmrt.github.io/DiliMiniSlots"><img src="static/images/Dili Mini Slots Thumb.jpg" class="imaginejoc"></a>
+                    <img onclick="Page('DiliMiniSlots')" src="static/images/Dili Mini Slots Thumb.jpg" class="imaginejoc">
                     <p class="text">Dili Mini Slots</p>
                 </div>
                 <div class="joc">
-                    <a href="http://localhost:8080/MafiaPozelorSlots"><img src="static/images/Mafia Pozelor Slots Thumb.webp" class="imaginejoc"></a>
+                    <img onclick="Page('MafiaPozelorSlots')" src="static/images/Mafia Pozelor Slots Thumb.webp" class="imaginejoc">
                     <p class="text">Mafia Pozelor Slots</p>
                 </div>
                 <div class="joc">
@@ -59,7 +58,7 @@ git push -u origin main
                     <p class="text">Futuristic Slots</p>
                 </div>
                 <div class="joc">
-                    <a href="https://vladmrt.github.io/GeekWheel"><img src="static/images/Geek Wheel XL.png" class="imaginejoc"></a>
+                    <img onclick="Page('GeekWheel')"src="static/images/Geek Wheel XL.png" class="imaginejoc">
                     <p class="text">Geek Wheel XL</p>
                 </div>
                 <div class="joc">
@@ -102,7 +101,7 @@ git push -u origin main
                     <p class="TextMetodePlata">Velo</p>
                     <p class="TextMetodePlata">Tigari</p>
                     <p class="TextMetodePlata">Stiti voi</p>
-                    <a href="https://vladmrt.github.io/TransferBancar.html"><p class="TextMetodePlata">Transfer bancar (donatii)</p></a>
+                    <p onclick="Page('TransferBancar')" class="TextMetodePlata">Transfer bancar (donatii)</p>
                 </div>
                 <div class="DivSectiuneAjutor">
                     <p class="TextAjutor1"><b>Ajutor</b></p>
