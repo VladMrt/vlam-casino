@@ -51,8 +51,19 @@ var Game = {
 		this.canvas.width = window.innerWidth;
 		this.canvas.height = window.innerHeight;
 
+		this.canvas.style.position = 'absolute';
+    	this.canvas.style.top = '50%';
+    	this.canvas.style.left = '50%';
+    	this.canvas.style.transform = 'translate(-50%, -50%)';
+
+    	const scale = 1;
+    	this.canvas.width = window.innerWidth * scale;
+    	this.canvas.height = window.innerHeight * scale;
+    	this.context.scale(scale, scale);
+
 		this.canvas.style.width = (this.canvas.width / 1.5) + 'px';
 		this.canvas.style.height = (this.canvas.height / 1.5) + 'px';
+
 
 		this.player = Paddle.new.call(this, 'left');
 		this.paddle = Paddle.new.call(this, 'right');
@@ -239,6 +250,7 @@ var Game = {
 
 	// Draw the objects to the canvas element
 	draw: function () {
+		
 		// Clear the Canvas
 		this.context.clearRect(
 			0,
@@ -261,42 +273,8 @@ var Game = {
 		// Set the fill style to white (For the paddles and the ball)
 		this.context.fillStyle = '#ffffff';
 
-		// Draw the Player
-		this.context.fillRect(
-			this.player.x,
-			this.player.y,
-			this.player.width,
-			this.player.height
-		);
-
-		// Draw the Paddle
-		this.context.fillRect(
-			this.paddle.x,
-			this.paddle.y,
-			this.paddle.width,
-			this.paddle.height
-		);
-
-		// Draw the Ball
-		if (Pong._turnDelayIsOver.call(this)) {
-			this.context.fillRect(
-				this.ball.ballImage,
-				this.ball.x,
-				this.ball.y,
-				this.ball.width,
-				this.ball.height
-			);
-		}
+		
 		this.context.drawImage(this.ball.ballImage, this.ball.x - 50, this.ball.y - 50, this.ball.width, this.ball.height);
-
-		// Draw the net (Line in the middle)
-		this.context.beginPath();
-		this.context.setLineDash([7, 15]);
-		this.context.moveTo((this.canvas.width / 2), this.canvas.height - 140);
-		this.context.lineTo((this.canvas.width / 2), 140);
-		this.context.lineWidth = 10;
-		this.context.strokeStyle = '#ffffff';
-		this.context.stroke();
 
 		// Set the default canvas font and align it to the center
 		this.context.font = '100px Courier New';
@@ -305,14 +283,14 @@ var Game = {
 		// Draw the players score (left)
 		this.context.fillText(
 			this.player.score.toString(),
-			(this.canvas.width / 2) - 300,
+			(this.canvas.width / 2),
 			200
 		);
 
 		// Draw the paddles score (right)
 		this.context.fillText(
 			this.paddle.score.toString(),
-			(this.canvas.width / 2) + 300,
+			(this.canvas.width / 2),
 			200
 		);
 
@@ -354,6 +332,37 @@ var Game = {
 			(this.canvas.width / 2),
 			this.canvas.height - 770
 		);
+		// Rotate the canvas
+		// this.context.translate(this.canvas.width / 2, this.canvas.height / 2);
+		// this.context.rotate(90 * Math.PI / 180);
+		// this.context.translate(-this.canvas.width / 2, -this.canvas.height / 2);
+
+		// Draw the Player
+		this.context.fillRect(
+			this.player.x,
+			this.player.y,
+			this.player.width,
+			this.player.height
+		);
+
+		// Draw the Paddle
+		this.context.fillRect(
+			this.paddle.x,
+			this.paddle.y,
+			this.paddle.width,
+			this.paddle.height
+		);
+
+		// Draw the Ball
+		if (Pong._turnDelayIsOver.call(this)) {
+			this.context.fillRect(
+				this.ball.ballImage,
+				this.ball.x,
+				this.ball.y,
+				this.ball.width,
+				this.ball.height
+			);
+		}
 	},
 
 	loop: function () {
@@ -367,18 +376,36 @@ var Game = {
 	},
 
 	listen: function () {
+
+		// if(isUpPressed()){
+		// 	if (Pong.running === false) {
+		// 		Pong.running = true;
+		// 		window.requestAnimationFrame(Pong.loop);
+		// 	}
+		// 	Pong.player.move = DIRECTION.UP;
+		// }
+		// else if(isDownPressed()){
+		// 	if (Pong.running === false) {
+		// 		Pong.running = true;
+		// 		window.requestAnimationFrame(Pong.loop);
+		// 	}
+		// 	Pong.player.move = DIRECTION.DOWN;
+		// }
+		// else 
 		document.addEventListener('keydown', function (key) {
 			// Handle the 'Press any key to begin' function and start the game.
 			if (Pong.running === false) {
 				Pong.running = true;
 				window.requestAnimationFrame(Pong.loop);
 			}
-
+				
 			// Handle up arrow and w key events
-			if (key.keyCode === 38 || key.keyCode === 87) Pong.player.move = DIRECTION.UP;
+			if (key.keyCode === 38 || key.keyCode === 87)
+				Pong.player.move = DIRECTION.UP;
 
 			// Handle down arrow and s key events
-			if (key.keyCode === 40 || key.keyCode === 83) Pong.player.move = DIRECTION.DOWN;
+			if (key.keyCode === 40 || key.keyCode === 83 || isDownPressed()) 
+				Pong.player.move = DIRECTION.DOWN;
 		});
 
 		// Stop the player from moving when there are no keys being pressed.
@@ -403,6 +430,20 @@ var Game = {
 	},
 
 };
+function isUpPressed(){
+	document.querySelector(".up")
+                .addEventListener("click", function () {
+                    return true;
+                });
+	return false;
+}
+function isDownPressed(){
+	document.querySelector(".down")
+                .addEventListener("click", function () {
+                    return true;
+                });
+	return false;
+}
 
 var Pong = Object.assign({}, Game);
 Pong.initialize();
