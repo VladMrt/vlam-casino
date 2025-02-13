@@ -25,7 +25,7 @@ function init() {
     console.log("Canvas și context inițializate cu succes.");
     draw();
 }
-draw(MelcCotaMare) {
+function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
     ctx.fillStyle = "green";
         ctx.fillRect(MelcCotaMare.x, MelcCotaMare.y, MelcCotaMare.width, MelcCotaMare.height);
