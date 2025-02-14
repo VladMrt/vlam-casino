@@ -30,6 +30,10 @@ app.get('/MafiaPozelorSlots', (req, res) => {
   res.sendFile(path.join(__dirname, 'templates', 'MafiaPozelorSlots.html'));
 });
 
+app.get('/TrenulDiliuSlots', (req, res) => {
+  res.sendFile(path.join(__dirname, 'templates', 'TrenulDiliuSlots.html'));
+});
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`)
 })

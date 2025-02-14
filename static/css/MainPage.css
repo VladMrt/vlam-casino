@@ -23,6 +23,7 @@ body, html {
     padding: 0;
     width: 100%;
 }
+/*Header styling*/
 .text{
     color:white;
     font-family: "Bona Nova SC", serif;
@@ -85,11 +86,6 @@ h1{
     font-size: 1.3vw;
     animation-duration: 0.6s;
 }
-
-.autentificare:hover{
-    cursor: pointer;
-    opacity:0.9;
-}
 .inregistrare{
     font-family: "Bona Nova SC", serif;
     font-size: 1.3vw;
@@ -105,6 +101,12 @@ h1{
     cursor: pointer;
     opacity:0.9;
 }
+/*Headerul se termina aici*/
+.autentificare:hover{
+    cursor: pointer;
+    opacity:0.9;
+}
+
 .jocuri {
     margin-top: 3vh;
     text-align: center;
@@ -197,6 +199,9 @@ footer{
     size:2vw;
     font-family: "Oswald", serif;
     font-optical-sizing: auto;
+}
+.TextMetodePlata:hover{
+    cursor: pointer;
 }
 .TextDespre1, .TextAjutor1, .TextMetodePlata1{
     margin-bottom: 2.7vh;
