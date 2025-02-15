@@ -33,15 +33,17 @@
             <canvas id="JocTrenulDiliu">                
             </canvas>
             <div class="DivGambling">
-                <div class="DivPariaza"><button class="Pariaza" onclick="Pariaza()">Pariaza</button></div>
+                <div class="DivPariaza"><button id="PariazaBtn" class="Pariaza" onclick="Pariaza()" disabled>Pariaza</button></div>
                 <div class="DivBilete">
-                    <button class="Bilet" MelcCotaMare><b>Bilet pe Tubularu!</b></button>
-                    <button class="Bilet" MelcCotaMedie1><b>Bilet pe Bombonel!</b></button>
-                    <button class="Bilet" MelcCotaMedie2><b>Bilet pe Velo!</b></button>
-                    <button class="Bilet" MelcCotaMica><b>Bilet pe LeSnail!</b></button>
+                    <button onclick="Tubularu()" class="Bilet" MelcCotaMare><b>Bilet pe Tubularu!</b></button>
+                    <button onclick="Bombonel()" class="Bilet" MelcCotaMedie1><b>Bilet pe Bombonel!</b></button>
+                    <button onclick="Velo()" class="Bilet" MelcCotaMedie2><b>Bilet pe Velo!</b></button>
+                    <button onclick="LeSnail()" class="Bilet" MelcCotaMica><b>Bilet pe LeSnail!</b></button>
                 </div>
             </div>
         </div>
+
+
         <footer>
             <div class="DivMareFooter">
                 <div class="DivParteaDeschisa">

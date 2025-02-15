@@ -2,7 +2,7 @@ var Mi = 10;
 var Me1 = 10;
 var Me2 = 10;
 var Ma = 10;
-
+var alegere=0;
 const c = document.getElementById("JocTrenulDiliu");
 const ctx = c.getContext("2d");
 
@@ -15,6 +15,33 @@ const snailHeight = 34;
 snailImg.onload = function () {
     Tot();
 };
+
+function enableBetButton() {
+    if (alegere !== 0) {
+        document.getElementById("PariazaBtn").disabled = false;
+        
+    }
+}
+
+function Tubularu(){
+    alegere=1;
+    enableBetButton()
+}
+
+function Bombonel(){
+    alegere=2;
+    enableBetButton()
+}
+
+function Velo(){
+    alegere=3;
+    enableBetButton()
+}
+
+function LeSnail(){
+    alegere=4;
+    enableBetButton()
+}
 
 function Tot() {
     ctx.drawImage(snailImg, Mi, 5, snailWidth, snailHeight);
