@@ -102,12 +102,181 @@ h1{
     opacity:0.9;
 }
 
+
+/*Headerul se termina aici*/
+.JoculCuButoane{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas{
+    width:1400px; 
+    height:600px;
+    background-color: white;
+    z-index: 50;
+    margin-top: 3vh;
+    display: inline-block;
+    margin-bottom: 10px;
+    
+}
+button:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+.DivGambling{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Pariaza{
+    color: white;
+    font-size: 20px;
+    background-color: rgb(255, 0, 0);
+    font-family: "Bona Nova SC", serif;
+    display: block;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border:none;
+    height:70px;
+    width:500px;
+    margin-top: 20px;
+}
+.DivBilete{
+    
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.Bilet{
+    font-size: 20px;
+    font-family: "Bona Nova SC", serif;
+    border-radius: 15px;
+    height: 70px;
+    width: 300px;
+    color: white;
+    background-color: #6d11b9;
+    border:none;
+}
+footer{
+    text-align: left;
+    align-items: center;
+    background-color: #410c6c;
+    height:900px;
+    width:100%;
+    position:relative;
+    margin-top: 200px;
+    padding-bottom: 0px;
+}
+/* Styling footer */
+.DivMareFooter{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    justify-items: space-between;
+}
+.DivParteaDeschisa{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+}
+.DivSectiuneaDespre{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding-left: 1vw;
+}
+.DivSectiuneMetodePlata{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.DivSectiuneAjutor{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+}
+.DivParteaInchisa{
+    display: flex;
+    flex-direction: column;
+    flex:0.3;
+    background-color: #340b55;
+    padding-left: 3vw;
+}
+.DivFooterJos{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    padding-top: 5vh;
+    background-color: #230939;
+    height:200px;
+    width: 100%;
+    justify-content: space-between;
+}
+/*Text styling footer*/
+.TextDespre, .TextAjutor, .TextMetodePlata, .TextDespre1, .TextAjutor1, .TextMetodePlata1, .TextDespre2, .Text18Ani, .TextFooterJos1, .TextFooterJos{
+    color:white;
+    size:2vw;
+    font-family: "Oswald", serif;
+    font-optical-sizing: auto;
+}
+.TextMetodePlata:hover{
+    cursor: pointer;
+}
+.TextDespre1, .TextAjutor1, .TextMetodePlata1{
+    margin-bottom: 2.7vh;
+}
+.TextDespre2{
+    margin-bottom: 4vh;
+}
+.Text18Ani{
+    width:18vw;
+}
+.TextFooterJos1{
+    width:54vw;
+    padding-left: 1.3vw;
+}
+.TextFooterJos{
+    width: 24vw;
+}
 @media (min-width: 800px){
     .logo1{
         display: none;
     }
 }
 @media (max-width: 768px){
+    .DivFooterJos, .DivMareFooter, .DivParteaDeschisa{
+        flex-direction: column;
+        }
+        footer{
+            height:2000px;
+        }
+         .TextAjutor1, .TextMetodePlata1{
+            margin-top:40px;
+            margin-bottom: 20px;
+        }
+        .DivParteaInchisa{
+            height:1000px;
+            width:100%;
+        }
+        .Text18Ani{
+            width:400px;
+        }
+        .TextDespre1{
+            margin-bottom: 20px;
+        }
+        .TextFooterJos1{
+            margin-bottom: 20px;
+        }
+        .DivFooterJos{
+            height:700px;
+        }
+        .TextFooterJos, .TextFooterJos1, .TextMetodePlata1{
+            width: 400px;
+        }
 .header {
     flex-direction: row;
     text-align: center;
@@ -137,19 +306,4 @@ h1{
 .mid{
     display: none;
 }
-}
-/*Headerul se termina aici*/
-.DivCanvas{
-    width: 100vw;
-    height: 100vh;
-    position:relative;
-}
-canvas{
-    width:90vw; 
-    height:60vh;
-    background-color: white;
-    position:fixed;
-    z-index: 50;
-    top:18%;
-    left:4.5%;
 }
