@@ -3,8 +3,6 @@
     <head>
         <title>Trenu' Diliu</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="static/js/PageLink.js"></script>
-        <script src="static/js/TrenulDiliuSlots.js"></script>
         <link rel="shortcut icon" href="static/images/LogoFav.png"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     </head>
-    <body onload="init()">
+    <body>
         <h1>
             <div class="header">
                 <img onclick="Page('')" src="static/images/VlamCasinoLogo.png" class="logo">
@@ -31,9 +29,78 @@
                 </div>
             </div>
         </h1>
-        <div class="DivCanvas">
-            <canvas id="JocTrenulDiliu"> </canvas>
+        <div class="JoculCuButoane">
+            <canvas id="JocTrenulDiliu">                
+            </canvas>
+            <div class="DivGambling">
+                <div class="DivPariaza"><button id="PariazaBtn" class="Pariaza" onclick="Pariaza()" disabled>Pariaza</button></div>
+                <div class="DivBilete">
+                    <button onclick="Tubularu()" class="Bilet" MelcCotaMare><b>Bilet pe Tubularu!</b></button>
+                    <button onclick="Bombonel()" class="Bilet" MelcCotaMedie1><b>Bilet pe Bombonel!</b></button>
+                    <button onclick="Velo()" class="Bilet" MelcCotaMedie2><b>Bilet pe Velo!</b></button>
+                    <button onclick="LeSnail()" class="Bilet" MelcCotaMica><b>Bilet pe LeSnail!</b></button>
+                </div>
+            </div>
         </div>
-        
+
+
+        <footer>
+            <div class="DivMareFooter">
+                <div class="DivParteaDeschisa">
+                    <div class="DivSectiuneaDespre">
+                        <p class="TextDespre1"><b>Despre noi</b></p>
+                        <p class="TextDespre">Agentii</p>
+                        <p class="TextDespre">Ajutor</p>
+                        <p class="TextDespre">Protectia datelor</p>
+                        <p class="TextDespre">Cookies</p>
+                        <p class="TextDespre">Joc responsabil</p>
+                        <p class="TextDespre">Politica impotriva spalarii banilor</p>
+                        <p class="TextDespre">Regulamente de joc</p>
+                        <p class="TextDespre">Termene si conditii</p>
+                        <p class="TextDespre">Licenta</p>
+                        <p class="TextDespre">Decizie autorizare</p>
+                        <p class="TextDespre2">Sponsorizari</p>
+                    </div>
+                    <div class="DivSectiuneMetodePlata">
+                        <p class="TextMetodePlata1"><b>Metode plata</b></p>
+                        <p class="TextMetodePlata">Cash</p>
+                        <p class="TextMetodePlata">Velo</p>
+                        <p class="TextMetodePlata">Tigari</p>
+                        <p class="TextMetodePlata">Stiti voi</p>
+                        <p onclick="Page('TransferBancar')" class="TextMetodePlata">Transfer bancar (donatii)</p>
+                    </div>
+                    <div class="DivSectiuneAjutor">
+                        <p class="TextAjutor1"><b>Ajutor</b></p>
+                        <p class="TextAjutor">Intrebari frecvente</p>
+                    </div>
+                </div>
+                <div class="DivParteaInchisa">
+                    <p class="Text18Ani">Accesul persoanelor sub 18 ani este incurajat.</p>
+                    <p class="Text18Ani">Este responsabilitatea fiecărui jucător să acționeze în conformitate cu reglementările în vigoare precum și cu termenii și condițiile noastre. 
+                        Jocurile de noroc implică risc financiar, jucați cu grijă.
+                        <br>
+                        <br>
+                        Vlam Casino nu este responsabil pentru vatamarea corporala sau mentala a jucatorilor/famillilor lor/prieteniilor lor etc. Fiecare jucator trebuie sa inteleaga ca pe acest site sunt cele mai bune sanse de a castiga un gazilion de dolari, totul la o rotire distanta.
+                    </p>
+                </div>
+            </div>
+            <div class="DivFooterJos">
+                <p class="TextFooterJos1">
+                    VLAM CASINO este Casa tuturor Pariurilor SUPER. 
+                    Asemenea lui Mozzart tot poti BETA no(ardeleneste), chiar si cand e FORTUNA! 
+                    <br>
+                    <br>
+                    Nu e cazul sa ti calculezi NET BET-ul, doar da-i MAX (BET)!
+                    Magnificul si Uni(cul) Bet ce te va pune in primul avion catre Las Vegas si cel ce face diferenta dintre un loser (average SuperBear player) si un Winner se pune cu Vlam Casino! Cu noi poti pune un Lucky Bet pana cand ceasul se face 8:88! (sau 4:44 pentru Jay Z si Oscar)
+                </p>
+                <p class="TextFooterJos">
+                    Acest site este un pamflet si trebuie tratat ca atare. Orice asemanare cu persoane/COMPANII de pacanele este o pura coincidenta.
+                    <br>
+                    Superbear nu ne da in judecata :3
+                </p>
+            </div>
+        </footer>
+        <script src="static/js/PageLink.js"></script>
+        <script type="text/javascript" src="static/js/TrenulDiliuSlots.js"></script>
     </body>
 </html>
